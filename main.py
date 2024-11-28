@@ -26,7 +26,7 @@ redditbot = RedditBot()
 posts = redditbot.get_posts("MemeVideos")
 
     # Create folder if it doesn't exist
-redditbot.create_data_folder()
+# redditbot.create_data_folder()
 num = 1
 print("mainFlag")
 # Go through posts and find 5 that will work for us.
@@ -45,16 +45,17 @@ CreateMovie.CreateMP4(redditbot.post_data)
 
 # Video info for YouTube.
 # This example uses the first post title.
+titles = ["you laugh, you restart", "1 laugh = 1 hour with diddy", "FUNNIEST MEME COMPLIATION"]
 video_data = {
         "file": "video.mp4",
-        "title": f"you laugh, you restart v{random.randint(1, 100)}",
+        "title": f"{random.choice(titles)} v{random.randint(1, 100)}",
         "description": "#meme #memes #trynottolaugh #funny\nIf you own any of the videos and you want credit please comment!\n\nI make meme compilations of the best and funniest videos and clips i find on the internet, the dankest memes, unexpected and unusual memes, fails, perfectly cut screams, tiktok memes will be chaotically compiled for your entertainment in this meme comp that will make you laugh watching these unusual videos 💀\n\n\nBuisness: winninglogo@gmail.com",
         "keywords":"meme,reddit,trynottolaugh,funny,memes",
         "privacyStatus":"public"
 }
 
 # print(video_data["title"])
-print(f"you laugh, you restart v{random.randint(1, 100)}")
+print(f"{random.choice(titles)} v{random.randint(1, 100)}")
 print("Posting")
 # time.sleep(60 * 60 * 24 - 1)
 upload_video(video_data)
